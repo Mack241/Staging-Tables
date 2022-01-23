@@ -29,6 +29,7 @@ const ModalComponent = ({ modal }) => {
     const [count, setCount] = useState(0)
     const [type, setType] = useState([])
     const [colName, setColName] = useState([])
+    const [tableName, setTableName] = useState('')
 
     const handleTypeChange = (e, index) => {
         type[index] = e.target.value
@@ -36,18 +37,13 @@ const ModalComponent = ({ modal }) => {
     }
 
     const removeColumnHandler = (index) => {
-        // setCount(count - 1)
         const filteredRows = type.filter((i) => i.toLowerCase() !== type[index].toLowerCase())
-        // type.map((i) => {
-        //     console.log(i)
-        // })
         console.log(filteredRows)
     }
 
     const handleColName = (e, index) => {
         e.preventDefault()
         colName[index] = e.target.value
-        // console.log(colName)
     }
 
     const addColumnHandler = () => {
@@ -59,12 +55,12 @@ const ModalComponent = ({ modal }) => {
             setClose((prevState) => !prevState)
         }
     }
-
+ 
     const submitHandler = async (e) => {
         e.preventDefault()
         setClose((prevState) => !prevState)
         try {
-            await axios.post('create_table', { type, count, colName })
+            await axios.post('create_table', { type, count, colName, tableName })
         } catch (err) {
             console.log(err)
         }
@@ -111,6 +107,14 @@ const ModalComponent = ({ modal }) => {
                     <form onSubmit={submitHandler}>
                         <FormGroup>
                             <FormControlLabel control={<Checkbox />} label="Date" />
+                            <TextField
+                                id="outlined-basic"
+                                label="Table Name"
+                                className="table-name"
+                                variant="outlined"
+                                value={tableName}
+                                onChange={(e) => setTableName(e.target.value)} 
+                            />
                         </FormGroup>
                         <div className="vr"></div>
                         <div className="column-div-wrapper">

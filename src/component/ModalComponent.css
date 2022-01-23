@@ -1,8 +1,8 @@
 .vr {
   border-left: 2px solid black;
   margin-left: 180px;
-  margin-top: -70px;
-  height: 560px;
+  margin-top: -130px !important;
+  height: 565px;
 }
 
 .column-div-wrapper {
@@ -50,4 +50,9 @@
   margin-left: 20px !important;
   margin-top: 20px !important;
   cursor: pointer;
+}
+
+.table-name {
+  margin-left: 10px;
+  width: 150px;
 }

@@ -29,9 +29,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/create_table', (req, res) => {
-    const { type, count, colName } = req.body    //CREATE TABLE tables RateID integer, Username VARCHAR(50)
-    let query = "CREATE TABLE tables( " 
-    console.log("Type ", type, " Count ", count, " ColName ", colName)  
+    const { type, count, colName, tableName } = req.body    //CREATE TABLE tables RateID integer, Username VARCHAR(50)
+    let query = `CREATE TABLE IF NOT EXISTS ${tableName}( ` 
     
     for(let i=0; i<count; i++){
         if(i == count-1){
@@ -40,8 +39,12 @@ app.post('/create_table', (req, res) => {
             query += colName[i]+" "+type[i]+", "
         }
     }
-    query = query + " )"
-    console.log(query)
+    query = query + " );"
+
+    client.query(query, (err, res) => {
+        console.log(err, res)
+        client.end()
+    })
     
 })
 
