@@ -1,0 +1,53 @@
+.vr {
+  border-left: 2px solid black;
+  margin-left: 180px;
+  margin-top: -70px;
+  height: 560px;
+}
+
+.column-div-wrapper {
+  width: 430px;
+  height: 440px;
+  margin-left: 190px;
+  margin-top: -550px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  overflow-y: scroll;
+}
+
+.add-column-button {
+  border: 1px solid gray !important;
+  width: 400px;
+  margin-top: 10px !important;
+  margin-left: 210px !important;
+}
+
+.add-column-button:hover {
+  background-color: #51c9fc !important;
+  color: white;
+  cursor: pointer;
+}
+
+.submit-btn {
+  margin-left: 550px !important;
+  border: 1px solid #10b025 !important;
+  border-radius: 5px !important;
+  margin-top: 10px !important;
+}
+
+.submit-btn:hover {
+  background-color: #10b025 !important;
+  color: white;
+  cursor: pointer;
+}
+
+.add-column {
+  margin-left: 10px !important;
+  margin-right: 50px !important;
+}
+
+.delete-column {
+  margin-left: 20px !important;
+  margin-top: 20px !important;
+  cursor: pointer;
+}
