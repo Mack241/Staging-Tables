@@ -62,6 +62,7 @@ const ModalComponent = ({ modal }) => {
 
     const submitHandler = async (e) => {
         e.preventDefault()
+        setClose((prevState) => !prevState)
         try {
             await axios.post('create_table', { type, count, colName })
         } catch (err) {
@@ -89,7 +90,7 @@ const ModalComponent = ({ modal }) => {
                 label="Type"
                 onChange={(e) => handleTypeChange(e, index)}
             >
-                <MenuItem value="VARCHAR">String</MenuItem>
+                <MenuItem value="VARCHAR(100)">String</MenuItem>
                 <MenuItem value="INTEGER">Numeric</MenuItem>
                 <MenuItem value="TIMESTAMP">Date</MenuItem>
             </Select>
