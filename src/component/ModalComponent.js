@@ -42,8 +42,8 @@ const ModalComponent = ({ modal }) => {
     }
 
     const removeColumnHandler = (index) => {
-        const filteredRows = type.filter((i) => i.toLowerCase() !== type[index].toLowerCase())
-        console.log(filteredRows)
+        setColName(colName.filter((i) => colName.indexOf(i) !== index))
+        setCount(count - 1)
     }
 
     const handleColName = (e, index) => {
