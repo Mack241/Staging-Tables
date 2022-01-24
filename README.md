@@ -8,7 +8,12 @@ This is a light-weight React app which can create `dynamic` tables for you in Po
 3. DATE
 
 ### Limitations:
-#### Note - You cannot use SQL specific `keywords` as Column Names. 
+#### Note - You cannot use SQL specific `keywords` as Column Names.
+
+### Technologies stack:
+1. React
+2. Nodejs
+3. PostgresSQL
 
 #### Note - You need to have Postgressql downloaded in your system.
 
