@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Button } from '@material-ui/core'
 import './Home.css'
-import Table from './Table'
 import ModalComponent from './ModalComponent'
 
 const Home = () => {
@@ -33,7 +32,6 @@ const Home = () => {
                 :
                 <></>
             }
-            <Table />
         </div>
     )
 }
