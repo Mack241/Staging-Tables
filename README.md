@@ -17,6 +17,6 @@ This is a light-weight React app which can create `dynamic` tables for you in Po
 
 #### Note - You need to have Postgressql downloaded in your system.
 
-## Fututre Changes:
+## Future Changes:
 1. Import data from Excel/CSV directly into the tables
 2. Dyanmically add `database name`, `user name`, `password`, `host name`, `port`.
