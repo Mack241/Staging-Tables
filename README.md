@@ -10,7 +10,7 @@ This is a light-weight React app which can create `dynamic` tables for you in Po
 ### Limitations:
 #### Note - You cannot use SQL specific `keywords` as Column Names.
 
-### Technologies stack:
+### Technology stack:
 1. React
 2. Nodejs
 3. PostgresSQL
