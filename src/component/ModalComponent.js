@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Box, Modal } from '@material-ui/core'
 import { FormGroup } from '@material-ui/core';
 import { FormControlLabel } from '@material-ui/core';
@@ -10,6 +10,7 @@ import { MenuItem } from '@material-ui/core';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import './ModalComponent.css'
 import axios from 'axios'
+import ModalContext from '../ModalContext';
 
 const style = {
     position: 'absolute',
@@ -25,6 +26,10 @@ const style = {
 };
 
 const ModalComponent = ({ modal }) => {
+
+    const context = useContext(ModalContext)
+    const { handleModal } = context
+
     const [close, setClose] = useState(true)
     const [count, setCount] = useState(0)
     const [type, setType] = useState([])
@@ -54,11 +59,13 @@ const ModalComponent = ({ modal }) => {
         if (modal) {
             setClose((prevState) => !prevState)
         }
+        handleModal()
     }
  
     const submitHandler = async (e) => {
         e.preventDefault()
         setClose((prevState) => !prevState)
+        handleModal()
         try {
             await axios.post('create_table', { type, count, colName, tableName })
         } catch (err) {
